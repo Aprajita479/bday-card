@@ -1,0 +1,85 @@
+body {
+  background: #fbdcdc;
+  height: 100%;
+  margin: 0;
+}
+
+.birthday-card {
+  position: relative;
+  width: 300px;
+  height: 395px;
+  border: 10px solid #ef5050;
+  margin: 60px auto 0 auto;
+  box-shadow: inset 10px 0px 15px 0px rgba(0, 0, 0, 0.1);
+  background-image: linear-gradient(
+      to bottom,
+      rgb(255, 255, 255),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url("https://images.unsplash.com/photo-1527481138388-31827a7c94d5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8Mnw0MjUzMjk5fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=600&q=60");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.text {
+  width: 80%;
+  height: 80%;
+  margin: auto;
+  font-family: "Nobile ", sans-serif;
+}
+p {
+  font-size: 1.1em;
+  color: #331717;
+  list-style: 1.4;
+  font-style: italic;
+  text-align: center;
+  margin: 30px auto 0 auto;
+}
+.title {
+  font-size: 1.5em;
+  margin: 60px auto 60px auto;
+}
+
+.cover-outer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: -10px 0px 0px -10px;
+  border: 10px solid #ef5050;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  transform-origin: 0% 50%;
+  transform: perspective(800px) rotateY(-180deg);
+  transition: all 0.8s ease-in-out;
+}
+.cover-outer img {
+  box-shadow: 0px 6px 11px 7px rgba(0, 0, 0, 0.22);
+  border-radius: 5px;
+}
+.cover-outer:hover {
+  transform: perspective(800px) rotateY(0deg);
+}
+.cover-inner {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 10px solid #ef5050;
+  background-color: #ef5050;
+  margin: -10px 0px 0px -10px;
+  backface-visibility: visible;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+  transform-style: preserve-3d;
+  transform-origin: 0% 50%;
+  transform: perspective(800px) rotateY(0deg);
+  transition: all 0.8s ease-in-out;
+  overflow: hidden;
+}
+.cover-inner img {
+  transform: rotateY(180deg);
+}
+
+.cover-inner:hover {
+  transform: perspective(800px) rotateY(-180deg);
+  box-shadow: 7px 0px 5px 0px rgba(0, 0, 0, 0.3),
+    inset 2px 0 px 15px 0 px rgba(0, 0, 0, 0.1);
+}
